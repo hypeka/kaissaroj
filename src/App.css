@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
 :root{
   --heading_color: ;
   --white-color:#fff;
-  --primary-color:  black;
-  --secondary-color: ;
+  --primary-color:  #101010;
+  --secondary-color: #1c1c1c;
   --tertiary-color:  ;
   --black-color: ;
-  --font-fam1: 'Kalam', cursive;
-  --font-fam2: 'Alata', sans-serif;
+  --font-fam1: 'Alata', sans-serif;
 }
 body{
 
 }
 p{
-
+  padding: 0px;
+  margin: 0px;
 }
 h1,h2,h3,h4,h5,h6{
 
@@ -37,6 +36,14 @@ h5,.h5{
 h6,.h6{
 
 }
+.nav-link{
+  color: var(--white-color);
+  margin: 0px;
+}
+.nav-link:hover{
+  cursor: pointer;
+  color: var(--white-color);
+}
 @media only screen and (min-width:320px) and (max-width:480px){
   
 }
@@ -48,4 +55,51 @@ h6,.h6{
 }
 @media only screen and (min-width:1025px) and (max-width:1200px){
 
+}
+.home{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 100px 0;
+  height: 700px;
+  font-family: var(--font-fam1);
+}
+.topic{
+  text-align: center;
+  margin-bottom: 28px;
+}
+.topic h3{
+  font-weight: bold;
+}
+.topic p{
+  opacity: 70%;
+}
+.meeting-main{
+  
+}
+.meeting-card{
+  border: solid 0.2px var(--white-color);
+  padding: 20px;
+  border-radius: 2px;
+}
+.meeting-card h4{
+  font-size: 20px;
+}
+.time{
+
+}
+.time ul{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.time ul>li{
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+.time ul>li>p{
+  font-size: 12px;
+}
+.time ul>li>p>span{
+  margin-right: 4px;
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import ".././App.css";
+
 const Home = () => {
   const arr = [
     {
@@ -17,8 +19,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="container">
+      <div className="home">
+        <div className="container-fluid">
+          <div className="container">
           <div className="topic">
             <h3>Saroj Ghalan</h3>
             <p>test</p>
@@ -27,22 +30,25 @@ const Home = () => {
             {arr.map((get, keys) => {
               return (
                 <>
+                  <NavLink to='/set-meeting' className='nav-link'>
                   <div className="meeting-card" key={keys}>
                     <h4>{get.title}</h4>
                     <div className="time">
                         <ul>
                             <li>
-                                <p>{get.time}</p>
+                                <p><span><i class="fa-regular fa-clock"></i></span>{get.time}</p>
                             </li>
                             <li>
-                                <p>1-on-1</p>
+                                <p><span><i class="fa-solid fa-user"></i></span>1-on-1</p>
                             </li>
                         </ul>
                     </div>
                   </div>
+                  </NavLink>
                 </>
               );
             })}
+          </div>
           </div>
         </div>
       </div>
