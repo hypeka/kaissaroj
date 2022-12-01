@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+:root{
+  --heading_color: ;
+  --white-color:#fff;
+  --primary-color:  black;
+  --secondary-color: ;
+  --tertiary-color:  ;
+  --black-color: ;
+  --font-fam1: 'Kalam', cursive;
+  --font-fam2: 'Alata', sans-serif;
 }
+body{
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
+p{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
+h1,h2,h3,h4,h5,h6{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+h1,.h1{
+  
 }
+h2,.h2{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+h3,.h3{
+
+}
+h4,.h4{
+
+}
+h5,.h5{
+
+}
+h6,.h6{
+
+}
+@media only screen and (min-width:320px) and (max-width:480px){
+  
+}
+@media only screen and (min-width:481px) and (max-width:768px){
+
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+
+}
+@media only screen and (min-width:1025px) and (max-width:1200px){
+
 }
