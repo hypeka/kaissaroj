@@ -103,7 +103,6 @@ h6,.h6{
 .time ul>li>p>span{
   margin-right: 4px;
 }
-.react-calendar__tile{
-  background-color: var(--secondary-color);
-  color: var(--white-color);
+.meeting-schedule-main{
+  
 }
