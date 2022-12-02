@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import image from '../Assests/Images/id.jpg'
 
 const SetMeeting = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -52,7 +53,7 @@ const SetMeeting = () => {
                 <div className="col-md-4">
                   <div className="left-meet">
                     <div className="left-meeting-head">
-                      <img src="" alt="" />
+                      <img src={image} alt="" />
                       <h4>Saroj Ghalan</h4>
                       <h2>30 Min Meeting</h2>
                     </div>
@@ -60,20 +61,25 @@ const SetMeeting = () => {
                       <ul>
                         <li>
                           <p>
-                            <span></span>Call video
+                            <span><i class="fa-solid fa-video"></i></span>Call video
                           </p>
                         </li>
                         <li>
                           <p>
-                            <span></span>30 Minutes
+                            <span><i class="fa-regular fa-clock"></i></span>30 Minutes
                           </p>
                         </li>
                         <li>
                           <p>
-                            <span></span>Asia/Kathmandu
+                            <span><i class="fa-solid fa-globe"></i></span>Asia/Kathmandu
                           </p>
                         </li>
                       </ul>
+                    </div>
+                    <div className="back-arrow">
+                      <NavLink to='/'>
+                      <p><i class="fa-solid fa-arrow-left"></i></p>
+                      </NavLink>
                     </div>
                   </div>
                 </div>

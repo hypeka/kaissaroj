@@ -104,5 +104,76 @@ h6,.h6{
   margin-right: 4px;
 }
 .meeting-schedule-main{
-  
+  background-color: var(--secondary-color);
+  border: solid 1px var(--white-color);
+}
+.left-meet{
+  padding: 20px;
+}
+.left-meeting-head{
+
+}
+.left-meeting-head img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.left-meeting-head h4{
+  margin-top: 12px;
+  opacity: 70%;
+  font-size: 20px;
+}
+.left-meeting-head h2{
+  font-size: 25px;
+}
+.left-meet-content{
+
+}
+.left-meet-content ul{
+  padding: 0px;
+}
+.left-meet-content ul>li{
+  list-style-type: none;
+  opacity: 70%;
+} 
+.left-meet-content ul>li>p{
+  font-size: 14px;
+}
+.left-meet-content ul>li>p>span{
+  font-size: 14px;
+  margin-right: 12px;
+}
+.right-meet{
+
+}
+.time-picker{
+  padding: 20px;
+  text-align: center;
+}
+.time-picker ul{
+  padding: 0px;
+}
+.time-picker ul>li{
+  list-style-type: none;
+  /* display: inline-block; */
+}
+.time-picker ul>li>p{
+
+}
+.nav-tabs .nav-link.active{
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+  background-color: var(--secondary-color7);
+}
+.nav-tabs .nav-link {
+  color: var(--white-color);
+  padding: 8px 16px ;
+}
+.nav-tabs .nav-link:hover{
+  background-color: var(--primary-color);
+  border: 1px solid var(--white-color);
+ 
+}
+.nav-tabs{
+  margin-left: 86px;
 }
