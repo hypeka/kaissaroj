@@ -14,8 +14,7 @@ const FinalsetMeeting = () => {
   const [meetingArray , setMeetingArray] = useState([]);
 
   const SubmitHandler = () => {
-    setMeetingArray([...meetingArray,{name:name,email:email,notes:notes}])
-    navigate('/',{state:{meetingArray:[...meetingArray,{name:name,email:email,notes:notes}],calender:state.calendar.toLocaleDateString(),meetingTime:state.title,atTime:state.time}})
+    navigate('/',{state:{meetingArray:[...meetingArray,{name:name,email:email,notes:notes,calender:state.calendar.toLocaleDateString(),meetingTime:state.title,atTime:state.time}]}})
     Swal.fire({
         title: "Thank You ",
         text: "Your meeting schedule has been created",
