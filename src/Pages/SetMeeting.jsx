@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import image from '../Assests/Images/id.jpg'
+import image from "../Assests/Images/id.jpg";
 
 const SetMeeting = () => {
   const [startDate, setStartDate] = useState(new Date());
 
-  const [hours , setHours] = useState('')
+  const [hours, setHours] = useState("");
 
   const halfday = [
     "9:00am",
@@ -48,7 +48,7 @@ const SetMeeting = () => {
 
   const timeCatcher = (get) => {
     setHours(get);
-  }
+  };
 
   // const copyText = async () => {
   //   try{
@@ -59,7 +59,8 @@ const SetMeeting = () => {
   //   }
   // }
 
-  console.log(hours)
+  console.log(hours);
+  console.log("start date", startDate);
   return (
     <>
       <div className="home">
@@ -78,31 +79,43 @@ const SetMeeting = () => {
                       <ul>
                         <li>
                           <p id="copy">
-                            <span><i class="fa-solid fa-video"></i></span>Call video
+                            <span>
+                              <i class="fa-solid fa-video"></i>
+                            </span>
+                            Call video
                           </p>
                         </li>
                         <li>
                           <p>
-                            <span><i class="fa-regular fa-clock"></i></span>30 Minutes
+                            <span>
+                              <i class="fa-regular fa-clock"></i>
+                            </span>
+                            30 Minutes
                           </p>
                         </li>
                         <li>
                           <p>
-                            <span><i class="fa-solid fa-globe"></i></span>Asia/Kathmandu
+                            <span>
+                              <i class="fa-solid fa-globe"></i>
+                            </span>
+                            Asia/Kathmandu
                           </p>
                           {/* <button onClick={copyText}>Copy text</button> */}
                         </li>
                       </ul>
                     </div>
                     <div className="back-arrow">
-                      <NavLink to='/'>
-                      <p><i class="fa-solid fa-arrow-left"></i></p>
+                      <NavLink to="/">
+                        <p>
+                          <i class="fa-solid fa-arrow-left"></i>
+                        </p>
                       </NavLink>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-5">
                   <div className="right-meet">
+                    <label htmlFor="">Select Date : </label>
                     {/* <Calendar onChange={onChange} value={value} /> */}
                     <DatePicker
                       selected={startDate}
@@ -118,6 +131,7 @@ const SetMeeting = () => {
                         <p>Sun,August 4</p>
                       </li>
                       <li>
+                        <label htmlFor="">Select Hours :</label>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                           <li class="nav-item" role="presentation">
                             <button
@@ -156,12 +170,15 @@ const SetMeeting = () => {
                             aria-labelledby="home-tab"
                           >
                             <div className="hours-display-main">
-                              {halfday.map((get,keys) => {
-                                return(
-                                  <div className="hours-display" onClick={() =>timeCatcher(get)}>
+                              {halfday.map((get, keys) => {
+                                return (
+                                  <div
+                                    className="hours-display"
+                                    onClick={() => timeCatcher(get)}
+                                  >
                                     <p>{get}</p>
                                   </div>
-                                )
+                                );
                               })}
                             </div>
                           </div>
@@ -172,16 +189,29 @@ const SetMeeting = () => {
                             aria-labelledby="profile-tab"
                           >
                             <div className="hours-display-main">
-                              {fullday.map((get,keys) => {
-                                return(
-                                  <div className="hours-display" onClick={() =>timeCatcher(get)}>
+                              {fullday.map((get, keys) => {
+                                return (
+                                  <div
+                                    className="hours-display"
+                                    onClick={() => timeCatcher(get)}
+                                  >
                                     <p>{get}</p>
                                   </div>
-                                )
+                                );
                               })}
                             </div>
                           </div>
                         </div>
+                        {hours == "" ? null : (
+                          <div className="submit">
+                            <NavLink
+                              to="/final-meeting"
+                              state={{ time: hours, calendar: startDate }}
+                            >
+                              <button>Submit</button>
+                            </NavLink>
+                          </div>
+                        )}
                       </li>
                     </ul>
                   </div>

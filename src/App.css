@@ -109,6 +109,7 @@ h6,.h6{
 }
 .left-meet{
   padding: 20px;
+  text-align: center;
 }
 .left-meeting-head{
 
@@ -144,7 +145,8 @@ h6,.h6{
   margin-right: 12px;
 }
 .right-meet{
-
+  text-align: center;
+  margin-top: 116px;
 }
 .time-picker{
   padding: 20px;
@@ -177,12 +179,31 @@ h6,.h6{
 .nav-tabs{
   margin-left: 86px;
 }
-.hours-dislplay-main{
-
+.hours-display-main{
+  height: 120px !important;
+  overflow-y: scroll;
 }
-.hours-dislplay{
-
+.hours-display{
+  cursor: pointer !important;
 }
-.hours-dislplay p{
+.hours-display:hover{
+  background-color: var(--white-color);
+  display: inline-block;
+  padding: 0px 16px;
+  color: var(--primary-color) !important;
+}
+.hours-display p{
+ 
+}
+.submit{
+  margin-top: 12px;
+  text-align: center;
+}
+.submit button:hover{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+}
+.final-meet{
   
 }
