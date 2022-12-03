@@ -60,7 +60,7 @@ h6,.h6{
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 100px 0;
-  height: 700px;
+  height: 900px;
   font-family: var(--font-fam1);
 }
 .topic{
@@ -246,4 +246,11 @@ h6,.h6{
 .submit-button{
   margin-left: 16px;
   border-radius: 8px;
+}
+.meeting-card{
+  margin-bottom: 26px;
+  text-align: left !important;
+}
+.topic h4>span{
+  color: var(--tertiary-color);
 }
