@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , useLocation} from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import image from "../Assests/Images/id.jpg";
 
 const SetMeeting = () => {
   const [startDate, setStartDate] = useState(new Date());
-
+  const {state} = useLocation();
   const [hours, setHours] = useState("");
 
   const halfday = [
@@ -50,6 +50,7 @@ const SetMeeting = () => {
     setHours(get);
   };
 
+
   // const copyText = async () => {
   //   try{
   //     await navigator.clipboard.writeText(document.getElementById('copy').innerHTML);
@@ -59,8 +60,6 @@ const SetMeeting = () => {
   //   }
   // }
 
-  console.log(hours);
-  console.log("start date", startDate);
   return (
     <>
       <div className="home">
@@ -73,7 +72,7 @@ const SetMeeting = () => {
                     <div className="left-meeting-head">
                       <img src={image} alt="" />
                       <h4>Saroj Ghalan</h4>
-                      <h2>30 Min Meeting</h2>
+                      <h2>{state.title}</h2>
                     </div>
                     <div className="left-meet-content">
                       <ul>
@@ -90,7 +89,7 @@ const SetMeeting = () => {
                             <span>
                               <i class="fa-regular fa-clock"></i>
                             </span>
-                            30 Minutes
+                            {state.title}
                           </p>
                         </li>
                         <li>
@@ -202,11 +201,11 @@ const SetMeeting = () => {
                             </div>
                           </div>
                         </div>
-                        {hours == "" ? null : (
+                        {hours === "" ? null : (
                           <div className="submit">
                             <NavLink
                               to="/final-meeting"
-                              state={{ time: hours, calendar: startDate }}
+                              state={{ time: hours, calendar: startDate ,title:state.title }}
                             >
                               <button>Submit</button>
                             </NavLink>

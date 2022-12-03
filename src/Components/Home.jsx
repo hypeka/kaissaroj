@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , useLocation} from "react-router-dom";
 
 import ".././App.css";
 
@@ -17,6 +17,9 @@ const Home = () => {
     },
   ];
 
+  const {state} = useLocation();
+  console.log("state data are ",state)
+
   return (
     <>
       <div className="home">
@@ -30,7 +33,7 @@ const Home = () => {
               {arr.map((get, keys) => {
                 return (
                   <>
-                    <NavLink to="/set-meeting" className="nav-link">
+                    <NavLink to="/set-meeting" className="nav-link" state={{title:get.title}}>
                       <div className="meeting-card" key={keys}>
                         <h4>{get.title}</h4>
                         <div className="time">
