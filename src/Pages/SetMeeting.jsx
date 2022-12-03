@@ -7,7 +7,9 @@ import image from '../Assests/Images/id.jpg'
 const SetMeeting = () => {
   const [startDate, setStartDate] = useState(new Date());
 
-  const halhday = [
+  const [hours , setHours] = useState('')
+
+  const halfday = [
     "9:00am",
     "9:30am",
     "10:00am",
@@ -43,6 +45,21 @@ const SetMeeting = () => {
     "16:00",
     "16:30",
   ];
+
+  const timeCatcher = (get) => {
+    setHours(get);
+  }
+
+  // const copyText = async () => {
+  //   try{
+  //     await navigator.clipboard.writeText(document.getElementById('copy').innerHTML);
+  //     alert("Content copied to clipboard");
+  //   }catch(err){
+  //     alert('failed to copy:' ,err)
+  //   }
+  // }
+
+  console.log(hours)
   return (
     <>
       <div className="home">
@@ -60,7 +77,7 @@ const SetMeeting = () => {
                     <div className="left-meet-content">
                       <ul>
                         <li>
-                          <p>
+                          <p id="copy">
                             <span><i class="fa-solid fa-video"></i></span>Call video
                           </p>
                         </li>
@@ -73,6 +90,7 @@ const SetMeeting = () => {
                           <p>
                             <span><i class="fa-solid fa-globe"></i></span>Asia/Kathmandu
                           </p>
+                          {/* <button onClick={copyText}>Copy text</button> */}
                         </li>
                       </ul>
                     </div>
@@ -137,7 +155,15 @@ const SetMeeting = () => {
                             role="tabpanel"
                             aria-labelledby="home-tab"
                           >
-                            jaja
+                            <div className="hours-display-main">
+                              {halfday.map((get,keys) => {
+                                return(
+                                  <div className="hours-display" onClick={() =>timeCatcher(get)}>
+                                    <p>{get}</p>
+                                  </div>
+                                )
+                              })}
+                            </div>
                           </div>
                           <div
                             class="tab-pane fade"
@@ -145,7 +171,15 @@ const SetMeeting = () => {
                             role="tabpanel"
                             aria-labelledby="profile-tab"
                           >
-                            kaka
+                            <div className="hours-display-main">
+                              {fullday.map((get,keys) => {
+                                return(
+                                  <div className="hours-display" onClick={() =>timeCatcher(get)}>
+                                    <p>{get}</p>
+                                  </div>
+                                )
+                              })}
+                            </div>
                           </div>
                         </div>
                       </li>
