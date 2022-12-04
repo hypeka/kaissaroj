@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext} from "react";
+import { MeetingContext } from "../Context/LocalStorage";
 import { NavLink, useLocation } from "react-router-dom";
 
 import ".././App.css";
@@ -19,6 +20,8 @@ const Home = () => {
 
   const { state } = useLocation();
   const meeting = state?.meetingArray;
+
+  const [meetingArray , setMeetingArray] = useContext(MeetingContext);
 
   return (
     <>
@@ -66,12 +69,12 @@ const Home = () => {
                 );
               })}
             </div>
-            {meeting?.length > 0 && <div className="meeting-list">
+            {meetingArray?.length > 0 && <div className="meeting-list">
               <div className="topic">
                 <h3>Created Meeting Schedule</h3>
               </div>
               <div className="row">
-                {meeting.map((get, keys) => {
+                {meetingArray.map((get, keys) => {
                   return (
                     <div className="col-md-3">
                       <div className="meeting-card">

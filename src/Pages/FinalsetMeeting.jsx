@@ -1,30 +1,51 @@
-import React, {useState} from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useLocation, useNavigate, NavLink } from "react-router-dom";
 import image from "../Assests/Images/id.jpg";
+import { MeetingContext } from "../Context/LocalStorage";
 import Swal from "sweetalert2";
 
 const FinalsetMeeting = () => {
   const { state } = useLocation();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const [name , setName] = useState('');
-  const [email , setEmail] = useState('');
-  const [notes , setNotes] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [notes, setNotes] = useState("");
 
-  const [meetingArray , setMeetingArray] = useState([]);
+  const [meetingArray, setMeetingArray] = useContext(MeetingContext);
 
   const SubmitHandler = () => {
-    navigate('/',{state:{meetingArray:[...meetingArray,{name:name,email:email,notes:notes,calender:state.calendar.toLocaleDateString(),meetingTime:state.title,atTime:state.time}]}})
+    setMeetingArray([
+      ...meetingArray,
+      {
+        name: name,
+        email: email,
+        notes: notes,
+        calender: state.calendar.toLocaleDateString(),
+        meetingTime: state.title,
+        atTime: state.time,
+      },
+    ]);
+    // meetingArray.push({
+    //   name: name,
+    //   email: email,
+    //   notes: notes,
+    //   calender: state.calendar.toLocaleDateString(),
+    //   meetingTime: state.title,
+    //   atTime: state.time,
+    // },)
+    navigate("/");
     Swal.fire({
-        title: "Thank You ",
-        text: "Your meeting schedule has been created",
-        icon: "success",
-        confirmButtonText: "OK",
-        timerProgressBar: true,
-        timer: 5000,
-      });
-  }
-  console.log(meetingArray);
+      title: "Thank You ",
+      text: "Your meeting schedule has been created",
+      icon: "success",
+      confirmButtonText: "OK",
+      timerProgressBar: true,
+      timer: 5000,
+    });
+  };
+
+  console.log("meeting array", meetingArray);
   return (
     <div className="home">
       <div className="container-fluid">
@@ -66,6 +87,13 @@ const FinalsetMeeting = () => {
                       </li>
                     </ul>
                   </div>
+                  <div className="back-arrow">
+                    <NavLink to="/">
+                      <p>
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </p>
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,12 +103,22 @@ const FinalsetMeeting = () => {
                   <div className="input-form">
                     <label htmlFor="">Your Name : </label>
                     <br />
-                    <input type="text" placeholder="Mutant Sensei...." value={name} onChange={(e) => setName(e.target.value)} />
+                    <input
+                      type="text"
+                      placeholder="Mutant Sensei...."
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
                   </div>
                   <div className="input-form">
                     <label htmlFor="">Email Address : </label>
                     <br />
-                    <input type="email" placeholder="mutant@gmail.com...." value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input
+                      type="email"
+                      placeholder="mutant@gmail.com...."
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
                   <div className="input-form">
                     <label htmlFor="">Additional Notes</label>
@@ -100,7 +138,9 @@ const FinalsetMeeting = () => {
             </div>
             <div className="button">
               <button className="cancel-button">Cancel</button>
-              <button className="submit-button" onClick={SubmitHandler}>Submit</button>
+              <button className="submit-button" onClick={SubmitHandler}>
+                Submit
+              </button>
             </div>
           </div>
         </div>
