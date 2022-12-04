@@ -7,6 +7,11 @@ import ".././App.css";
 const Home = () => {
   const arr = [
     {
+      id: "3",
+      title: "45 Min Meeting",
+      time: "45m",
+    },
+    {
       id: "1",
       title: "30 Min Meeting",
       time: "30m",
@@ -22,6 +27,12 @@ const Home = () => {
   const meeting = state?.meetingArray;
 
   const [meetingArray , setMeetingArray] = useContext(MeetingContext);
+
+  const removeHandler = (e,name) => {
+    let temp = [...meetingArray]
+    let tempData = temp.filter(item => item.name !== name);
+    setMeetingArray(tempData);
+  }
 
   return (
     <>
@@ -85,6 +96,9 @@ const Home = () => {
                           <h4>Notes : <span>{get.notes.substring(0,12)}</span></h4>
                           <h4>Date : <span>{get.calender}</span></h4>
                           <h4>At Time : <span>{get.atTime}</span></h4>
+                        </div>
+                        <div className="button">
+                          <button className="remove-button" onClick={(e) => removeHandler(e,get.name)}>Remove Schedule</button>
                         </div>
                       </div>
                     </div>

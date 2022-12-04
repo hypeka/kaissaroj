@@ -60,7 +60,7 @@ h6,.h6{
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 100px 0;
-  height: 900px;
+  height: 1200px;
   font-family: var(--font-fam1);
 }
 .topic{
@@ -253,4 +253,12 @@ h6,.h6{
 }
 .topic h4>span{
   color: var(--tertiary-color);
+}
+.remove-button{
+  border-radius: 8px;
+}
+.remove-button:hover{
+  border: 1px solid var(--white-color);
+  background-color: var(--secondary-color);
+  color: var(--white-color);
 }
